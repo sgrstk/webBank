@@ -10,14 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="C:\Users\Danut\Desktop\netrom_problem2.cs" Link="netrom_problem2.cs" />
-    <Compile Include="C:\Users\Danut\Desktop\netrom_problem3.cs" Link="netrom_problem3.cs" />
-    <Compile Include="C:\Users\Danut\Desktop\netrom_problema2.cs" Link="netrom_problema2.cs" />
-    <Compile Include="C:\Users\Danut\Desktop\netrom_problema3.cs" Link="netrom_problema3.cs" />
-    <Compile Include="C:\Users\Danut\Desktop\netrom_problema7.cs" Link="netrom_problema7.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.4" />
