@@ -1,140 +1,157 @@
 ﻿@page
 @model RegisterModel
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "Register"; 
 }
 
-<h1>@ViewData["Title"]</h1>
 
 <div class="row">
     <div class="col">
-        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h5>Personal Data</h5><hr />
-            <hr />
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="row">
-                <div class="col">
-                    <div class="form-group">
-                        <label asp-for="Input.Name"></label>
-                        <input asp-for="Input.Name" class="form-control" />
-                        <span asp-validation-for="Input.Name" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <label asp-for="Input.Surname"></label>
-                        <input asp-for="Input.Surname" class="form-control" />
-                        <span asp-validation-for="Input.Surname" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <label asp-for="Input.BirthDate"></label>
-                        <input asp-for="Input.BirthDate" class="form-control" />
-                        <span asp-validation-for="Input.BirthDate" class="text-danger"></span>
-                    </div>
-                </div>
-            </div>
-            <hr />
-            <div class="row">
-                <h5>Sensitive Data:</h5><hr />
-                <div class="col">
-                    <div class="form-group">
-                        <label asp-for="Input.CNP"></label>
-                        <input asp-for="Input.CNP" class="form-control" />
-                        <span asp-validation-for="Input.CNP" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <label asp-for="Input.CNPSerial"></label>
-                        <input asp-for="Input.CNPSerial" class="form-control" />
-                        <span asp-validation-for="Input.CNPSerial" class="text-danger"></span>
-                    </div>
-                    <hr />
-                </div>
-                <hr />
-            </div>
-            <div class="row">
-                <h5>Account:</h5><hr />
-                <div class="col">
-                    <div class="form-group">
-                        <label asp-for="Input.Email"></label>
-                        <input asp-for="Input.Email" class="form-control" />
-                        <span asp-validation-for="Input.Email" class="text-danger"></span>
-                    </div>
-                    <hr />
-                </div>
-                <hr />
-                <div class="col">
-                    <div class="form-group">
-                        <label asp-for="Input.Password"></label>
-                        <input asp-for="Input.Password" class="form-control" />
-                        <span asp-validation-for="Input.Password" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <label asp-for="Input.ConfirmPassword"></label>
-                        <input asp-for="Input.ConfirmPassword" class="form-control" />
-                        <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <h5>Residence:</h5><hr />
-                <div class="col">
-                    <div class="form-group">
-                        <label asp-for="Input.Address"></label>
-                        <input asp-for="Input.Address" class="form-control" />
-                        <span asp-validation-for="Input.Address" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <label asp-for="Input.Country"></label>
-                        <input asp-for="Input.Country" class="form-control" />
-                        <span asp-validation-for="Input.Country" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <label asp-for="Input.Citizenship"></label>
-                        <input asp-for="Input.Citizenship" class="form-control" />
-                        <span asp-validation-for="Input.Citizenship" class="text-danger"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <h5>Additional:</h5><hr />
-                <hr />
-                <div class="col">
-                    <div class="form-group">
-                        <label asp-for="Input.PhoneNumber"></label>
-                        <input asp-for="Input.PhoneNumber" class="form-control" />
-                        <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <label asp-for="Input.Occupation"></label>
-                        <input asp-for="Input.Occupation" class="form-control" />
-                        <span asp-validation-for="Input.Occupation" class="text-danger"></span>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <label asp-for="Input.Employer"></label>
-                        <input asp-for="Input.Employer" class="form-control" />
-                        <span asp-validation-for="Input.Employer" class="text-danger"></span>
-                    </div>
-                </div>
-            </div>
+        <div class="web-register-container">
+            <div class="web-register-form">
+                <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                    <div class="web-register-form-section">
 
+                        <div class="row">
+                            <div class="web-title-label">
+                                @ViewData["Title"]
+                            </div>
 
+                        </div>
+                    </div>
 
-            <button type="submit" class="btn btn-primary">Register</button>
-        </form>
+                    <div class="web-register-form-section">
+
+                        <div class="row">
+                            <div class="web-header-label">Personal Data</div><hr />
+
+                            <div asp-validation-summary="All" class="text-danger"></div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label asp-for="Input.Name"></label>
+                                    <input asp-for="Input.Name" class="form-control" />
+                                    <span asp-validation-for="Input.Name" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label asp-for="Input.Surname"></label>
+                                    <input asp-for="Input.Surname" class="form-control" />
+                                    <span asp-validation-for="Input.Surname" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label asp-for="Input.BirthDate"></label>
+                                    <input asp-for="Input.BirthDate" class="form-control" />
+                                    <span asp-validation-for="Input.BirthDate" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="web-register-form-section">
+                        <div class="row">
+                            <div class="web-header-label">Sensitive Data:</div><hr />
+                            <div class="col">
+                                <div class="form-group">
+                                    <label asp-for="Input.CNP"></label>
+                                    <input asp-for="Input.CNP" class="form-control" />
+                                    <span asp-validation-for="Input.CNP" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label asp-for="Input.CNPSerial"></label>
+                                    <input asp-for="Input.CNPSerial" class="form-control" />
+                                    <span asp-validation-for="Input.CNPSerial" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="web-register-form-section">
+                        <div class="row">
+                            <div class="web-header-label">Account:</div><hr />
+                            <div class="col">
+                                <div class="form-group">
+                                    <label asp-for="Input.Email"></label>
+                                    <input asp-for="Input.Email" class="form-control" />
+                                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label asp-for="Input.Password"></label>
+                                    <input asp-for="Input.Password" class="form-control" />
+                                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label asp-for="Input.ConfirmPassword"></label>
+                                    <input asp-for="Input.ConfirmPassword" class="form-control" />
+                                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="web-register-form-section">
+                        <div class="row">
+                            <div class="web-header-label">Residence:</div><hr />
+                            <div class="col">
+                                <div class="form-group">
+                                    <label asp-for="Input.Address"></label>
+                                    <input asp-for="Input.Address" class="form-control" />
+                                    <span asp-validation-for="Input.Address" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label asp-for="Input.Country"></label>
+                                    <input asp-for="Input.Country" class="form-control" />
+                                    <span asp-validation-for="Input.Country" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label asp-for="Input.Citizenship"></label>
+                                    <input asp-for="Input.Citizenship" class="form-control" />
+                                    <span asp-validation-for="Input.Citizenship" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="web-register-form-section">
+                        <div class="row">
+                            <div class="web-header-label">Additional:</div><hr />
+                            <div class="col">
+                                <div class="form-group">
+                                    <label asp-for="Input.PhoneNumber"></label>
+                                    <input asp-for="Input.PhoneNumber" class="form-control" />
+                                    <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label asp-for="Input.Occupation"></label>
+                                    <input asp-for="Input.Occupation" class="form-control" />
+                                    <span asp-validation-for="Input.Occupation" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label asp-for="Input.Employer"></label>
+                                    <input asp-for="Input.Employer" class="form-control" />
+                                    <span asp-validation-for="Input.Employer" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="web-register-button-area">
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 

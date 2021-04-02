@@ -1,0 +1,33 @@
+﻿.web-register-container {
+    display: flex;
+    justify-content: center;
+}
+
+.row > hr {
+    height: 0.5px
+}
+
+.web-register-form {
+    width: 70%;
+    padding: 2em;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.2);
+}
+
+.web-register-form-section {
+    margin-bottom: 2em;
+}
+
+.web-title-label {
+    text-align: center;
+    font-weight: 300;
+    font-size: x-large;
+}
+
+.web-register-button-area {
+    text-align: center
+}
+
+.web-header-label {
+    font-size: larger;
+    font-weight: 100;
+}
