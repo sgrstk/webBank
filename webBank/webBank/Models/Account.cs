@@ -1,61 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
-using static webBank.Utils.Utils;
+using System.ComponentModel.DataAnnotations;
+using webBank.Models.Enums;
 
 namespace webBank.Models
 {
-    public abstract class Account
+    public class Account
     {
-        public Guid AccountId { get; }
-        public string Owner { get; }
-        public DateTime CreatedAt { get; }
-        public List<Transaction> Transactions = new List<Transaction>();
+        [Key]
+        public int Id { get; set; }
+        public ApplicationUser Owner { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public double Balance { get; set; }
+        public Guid Iban { get; set; }
+        public Currency Currency { get; set; }
+        public AccountType AccountType { get; set; }
 
 
-        public Account(string ownerName)
+        List<Transaction> Transactions { get; set; }
+
+        public Account()
         {
-            AccountId = Guid.NewGuid();
-            Owner = ownerName;
+
+        }
+
+        public Account(ApplicationUser owner, Currency currency, AccountType accountType)
+        {
+            Owner = owner;
+            AccountType = accountType;
             CreatedAt = DateTime.Now;
-        }
-        public double getBalance()
-        {
-            double balance = 0.00;
-            Transactions.ForEach(trans =>
-            {
-                switch (trans.Type)
-                {
-                    case TransactionType.INTEREST_EARNED:
-                    case TransactionType.DEPOSIT:
-                        balance += trans.Amount;
-                        break;
-                    case TransactionType.WITHDRAW:
-                        balance -= trans.Amount;
-                        break;
-                }
-            });
-            return balance;
-        }
-
-        virtual public void deposit(double amount)
-        {
-            Transaction trans = new Transaction(
-                AccountId,
-                amount,
-                TransactionType.DEPOSIT
-            );
-            Transactions.Add(trans);
-        }
-
-       
-        public void withDraw(double amount)
-        {
-
-            Transaction trans = new Transaction(
-                AccountId,
-                amount,
-                TransactionType.WITHDRAW);
-            Transactions.Add(trans);
+            Balance = 0;
+            Currency = currency;
+            Iban = new Guid();
         }
     }
 }

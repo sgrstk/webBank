@@ -1,23 +1,37 @@
 ﻿using System;
-using static webBank.Utils.Utils;
+using System.ComponentModel.DataAnnotations;
+using webBank.Models.Enums;
 
 namespace webBank.Models
 
 {
     public class Transaction
     {
-        public Guid AccountId { get; }
-        public double Amount { get; }
+        [Key]
+        public int Id { get; set; }
         public DateTime CreatedAt { get; }
+        public double Amount { get; set; }
+        public Account Sender { get; set; }
+        public Account Receiver { get; set; }
+        public TransactionType TransactionType { get; set; }
 
-        public TransactionType Type { get; }
+        public string Details { get; set; }
 
-        public Transaction(Guid accountId, double amount, TransactionType type)
+        public Transaction()
         {
-            AccountId = accountId;
-            Amount = amount;
-            Type = type;
+
+        }
+        public Transaction(Account sender, double amount, TransactionType transactionType, Account receiver = null)
+        {
             CreatedAt = DateTime.Now;
+            Amount = amount;
+            sender.Balance -= amount;
+            TransactionType = transactionType;
+            Details = transactionType.ToString();
+            if (receiver != null)
+            {
+                receiver.Balance += amount;
+            }
         }
     }
 }
